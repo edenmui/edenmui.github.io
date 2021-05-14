@@ -1,6 +1,7 @@
 # %%
-doc = '/Users/emporius/Downloads/airports.csv'
+doc = 'Assets/airports.csv'
 import pandas as pd
+
 df = pd.read_csv(doc)
 df
 # %%
@@ -25,6 +26,7 @@ iata
 
 # %%
 import json
+
 with open('iata.json', 'w') as js:
     content = json.dumps(lst)
     js.write(content)
