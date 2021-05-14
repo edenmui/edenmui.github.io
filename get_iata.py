@@ -14,5 +14,5 @@ iata = df[['iata_code', 'name']].dropna()
 iata.columns = ['IATA', 'Name']
 
 # %%
-iata.to_json('iata.json', orient='columns')
+iata.to_json('iata.json', orient='split')
 # %%
