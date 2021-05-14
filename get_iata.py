@@ -21,6 +21,9 @@ lst = []
 for name, id in zip(iata['Name'], iata['ID']):
     lst.append(dict({"ID":id,  "Name":name}))
 # %%
+iata
+
+# %%
 import json
 with open('iata.json', 'w') as js:
     content = json.dumps(lst)
