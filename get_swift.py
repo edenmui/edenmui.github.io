@@ -26,5 +26,5 @@ with open('swift.json', 'w', encoding='utf-8') as js:
     js.write(content)
 # %%
 
-
+dict(zip(df['ISO Country Code'], df['Country Name']))
 # %%
