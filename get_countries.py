@@ -7,10 +7,13 @@ df0 = pd.read_csv(doc)
 
 df = df0[['code', 'name', 'id']].copy()
 df['Countries'] = df['code'] + ' - ' + df['name']
-
+df['Index'] = range(0,df.shape[0])
+df['Index'] = df['Index'].apply(lambda x: str(x).zfill(4))
 lst = []
-for id, name in zip(df['code'], df['Countries']):
-    lst.append({"ID": f"{str(id).zfill(6)}", "Country": name})
+
+for id, name in zip(df['Index'], df['Countries']):
+    lst.append(
+        {"ID": id, "Country": name})
 
 import json
 
