@@ -1,18 +1,24 @@
 # %%
 doc = 'Assets/countries.csv'
 import pandas as pd
+df0 = pd.read_csv(doc)
 
-df = pd.read_csv(doc, )
-filtered = df[['code', 'name', 'id']].copy()
-filtered['Countries'] = filtered['code'] + ' - ' + filtered['name']
+df = df0[['code', 'name', 'id']].copy()
+df['Countries'] = df['code'] + ' - ' + df['name']
+
 lst = []
-for id, name in zip(filtered['code'], filtered['Countries']):
-    lst.append({"ID": id, "Countries": name})
+for id, name in zip(df['code'], df['Countries']):
+    lst.append({"ID": f"{str(id).zfill(6)}", "Code - Country": name})
 
+lst
+# %%
 import json
-
-content = json.dumps(lst, ensure_ascii=False)
-with open('iso3166.json', 'w', encoding='utf-8') as js:
+content = json.dumps(lst)
+with open('country_codes.json', 'w', encoding='utf-8') as js:
     js.write(content)
 
+# %%
+content = json.dumps(lst, ensure_ascii=False)
+# %%
+content
 # %%
