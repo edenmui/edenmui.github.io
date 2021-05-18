@@ -9,6 +9,7 @@ df = df0[['code', 'name', 'id']].copy()
 df['Countries'] = df['code'] + ' - ' + df['name']
 df['Index'] = range(0,df.shape[0])
 df['Index'] = df['Index'].apply(lambda x: str(x).zfill(4))
+df.dropna(inplace=True)
 lst = []
 
 for id, name in zip(df['Index'], df['Countries']):
