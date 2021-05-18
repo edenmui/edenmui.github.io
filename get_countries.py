@@ -10,7 +10,7 @@ df['Countries'] = df['code'] + ' - ' + df['name']
 
 lst = []
 for id, name in zip(df['code'], df['Countries']):
-    lst.append({"ID": f"{str(id).zfill(6)}", "Code - Country": name})
+    lst.append({"ID": f"{str(id).zfill(6)}", "Country": name})
 
 import json
 
