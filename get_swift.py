@@ -23,13 +23,9 @@ df = df.query("`ISO Country Code` not in @banned")
 
 lst = []
 for id, swift_name in zip(df['ID'], df['SWIFT + NAME']):
-    lst.append({"ID":id, "BANK": swift_name})
+    lst.append({"ID":f"{str(id).zfill(6)}", "BANK": swift_name})
 
 content = json.dumps(lst, ensure_ascii=False)
 with open('swift.json', 'w', encoding='utf-8') as js:
     js.write(content)
-# %%
-
-
-# %%
 # %%
