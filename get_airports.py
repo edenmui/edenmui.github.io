@@ -16,3 +16,9 @@ with open('iata.json', 'w') as js:
     content = json.dumps(lst)
     js.write(content)
 # %%
+
+iata
+# %%
+fil = iata[(iata['Country'].isin(['CN', 'LK', 'FR', 'IN', 'BD'])) & (iata['Name'].str.contains('International'))]
+fil.to_excel('fil.xlsx')
+# %%
