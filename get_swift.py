@@ -48,6 +48,7 @@ target_countries = ['CN',
  'IT']
 
 df = df[df['ISO Country Code'].isin(target_countries)]
+df.to_csv('swift.csv')
 
 df['SWIFT + NAME'] = df['SWIFT'] + ' - ' + df['Bank Name']
 # %%
