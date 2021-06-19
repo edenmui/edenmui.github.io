@@ -11,7 +11,7 @@ import numpy as np
 
 df['Type'] = df['Branch'].apply(lambda x: 'H' if x == '-' else 'B')
 
-df.set_index('SWIFT', inplace=True, drop=False)
+#df.set_index('SWIFT', inplace=True, drop=False)
 
 target_countries = ['CN',
  'HK',
