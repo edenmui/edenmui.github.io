@@ -2,7 +2,6 @@
 doc = 'Assets/swift.csv'
 import pandas as pd
 
-
 df = pd.read_csv(doc)
 df.columns = ['ID', 'ISO Country Code', 'Country Name', 'Bank Name', 'City', 'Branch', 'SWIFT' ]
 
@@ -54,6 +53,7 @@ df['SWIFT + NAME'] = df['SWIFT'] + ' - ' + df['Bank Name']
 # %%
 df = df.apply(lambda x: x.apply(lambda y: str(y).title()))
 import json
+
 banned = '''AD AI AG AW BS BH BZ BM BW VG KY CK CY DM ET GH GI GD GG IR IM JE LR LI MT MH MC MS NR BQ NU PA WS SM RS SC LC KN VC'''
 banned = banned.split(' ')
 df = df.query("`ISO Country Code` not in @banned")
